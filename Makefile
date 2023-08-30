@@ -41,7 +41,7 @@ BUNDLE_METADATA_OPTS ?= $(BUNDLE_CHANNELS) $(BUNDLE_DEFAULT_CHANNEL)
 # For example, running 'make bundle-build bundle-push catalog-build catalog-push' will build and push both
 # cassandra.datastax.com/cass-oper-bundle:$VERSION and cassandra.datastax.com/cass-oper-catalog:$VERSION.
 
-ORG ?= tylergu1998
+ORG ?= ghcr.io/xlab-uiuc
 IMAGE_TAG_BASE ?= $(ORG)/cass-operator
 
 M_INTEG_DIR ?= all

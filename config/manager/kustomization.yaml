@@ -13,5 +13,5 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
 - name: controller
-  newName: k8ssandra/cass-operator
-  newTag: v1.10.3
+  newName: ghcr.io/xlab-uiuc/cass-operator
+  newTag: cov-dev.241e71c-20230826
