@@ -1,5 +1,5 @@
 # Build the manager binary
-FROM golang:1.16 as builder
+FROM golang:1.21 as builder
 
 WORKDIR /workspace
 # Copy the Go Modules manifests
@@ -17,7 +17,7 @@ COPY pkg/ pkg/
 
 
 # Build
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 GO111MODULE=on go build -a -o manager main.go
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 GO111MODULE=on go build -cover -covermode=set -a -o manager main.go
 
 # Build the UBI image
 FROM redhat/ubi8-micro:latest
@@ -36,6 +36,6 @@ WORKDIR /
 COPY --from=builder /workspace/manager /manager
 COPY ./LICENSE.txt /licenses/
 
-USER 65532:65532
+USER 0:0
 
 ENTRYPOINT ["/manager"]

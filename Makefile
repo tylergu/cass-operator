@@ -4,7 +4,7 @@
 # - use the VERSION as arg of the bundle target (e.g make bundle VERSION=0.0.2)
 # - use environment variables to overwrite this value (e.g export VERSION=0.0.2)
 
-VERSION ?= 1.10.0
+VERSION ?= cov
 
 COMMIT := $(shell git rev-parse --short HEAD)
 DATE := $(shell date +%Y%m%d)
@@ -41,7 +41,7 @@ BUNDLE_METADATA_OPTS ?= $(BUNDLE_CHANNELS) $(BUNDLE_DEFAULT_CHANNEL)
 # For example, running 'make bundle-build bundle-push catalog-build catalog-push' will build and push both
 # cassandra.datastax.com/cass-oper-bundle:$VERSION and cassandra.datastax.com/cass-oper-catalog:$VERSION.
 
-ORG ?= k8ssandra
+ORG ?= tylergu1998
 IMAGE_TAG_BASE ?= $(ORG)/cass-operator
 
 M_INTEG_DIR ?= all
